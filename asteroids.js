@@ -1,19 +1,20 @@
 class Asteroids() {
   constructor() {
-    this.rock = rock
+    this.height = 20
+    this.width = 20
   }
 }
 
-function move(rock) {
-  var top = 0
-
-  function step() {
-    rock.style.top = `${top += 2}px`
-
-    if (top < 200) {
-      window.requestAnimationFrame(step)
-    }
-  }
-
-  window.requestAnimationFrame(step)
-}
+// function move(rock) {
+//   var top = 0
+//
+//   function step() {
+//     rock.style.top = `${top += 2}px`
+//
+//     if (top < 200) {
+//       window.requestAnimationFrame(step)
+//     }
+//   }
+//
+//   window.requestAnimationFrame(step)
+// }

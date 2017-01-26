@@ -1,11 +1,24 @@
 #board {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 33%;
-  margin-right: 33%;
-  margin-top: 50px;
+  background-color: grey;
+  /*background-color: #111;*/
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 800px;
 }
 
-.square {
-  width: 33%;
+#dog {
+  background-color: green;
+  height: 60px;
+  position: absolute;
+  width: 60px;
+}
+
+.asteroid {
+  width: 20px;
+  height: 20px;
+  background: tan;
+  position: absolute
 }
