@@ -8,62 +8,57 @@ class Dog {
     // this.score = 0 score being kept by game? Will change later.
   }
 
-
   render(){
     let $dog = $('#dog')
     $dog.html()
   }
-
-  // var dogPosition = "325px"
-  // var positionBottom = "0px"
-  // var positionTop = "650px"
-  // var positionLeft = "0px"
-  // var positionRight = "1100px"
 
   moveDog() {
   // this.addEventListener.bind(this))
     $(document).on("keyup", (key) => {
       if (key.which == 38) { // up
         this.moveDogUp() // move the spaceship up
-      } else if(key.which == 40) { // down
-        this.moveDogDown() // move the spaceship down, $(event.target) ?
+      }
+      if (key.which == 40) {
+        this.moveDogDown() // move the spaceship down
       }
     })
   }
 
-  dogPosition(){
+  dogPosition(){ //starting point of dog
     return parseInt($(".container #board #dog").css("bottom"))
   }
 
-
   moveDogUp() {
     let dogItself = this
-    window.requestAnimationFrame( () => {
-      if (dogItself.dogPosition() < 650) {
-        var newDogPosition = (dogItself.dogPosition() + 50).toString().concat('px')
-        // debugger
-        return $('#dog').css('bottom')
+    function move() {
+      var newDogPosition = (dogItself.dogPosition() + 25)
+      if (newDogPosition < 595) {
+        return $('#dog').css('bottom', (newDogPosition.toString().concat('px')))
+        window.requestAnimationFrame(move)
       }
-  })
+  }
+  window.requestAnimationFrame(move)
 }
 
-  moveDogdown() {
+  moveDogDown() {
     let dogItself = this
-    window.requestAnimationFrame(function() {
-      if (dogItself.dogPosition > 0) {
-        var newDogPosition = (dogItself.dogPosition() - 50).toString().concat('px')
-        newDogPosition
-        return $('#dog').css('bottom').append(`${newDogPosition}`)
+    function move() {
+      var newDogPosition = (dogItself.dogPosition() - 25)
+      if (newDogPosition > 0) {
+        return $('#dog').css('bottom', (newDogPosition.toString().concat('px')))
+        window.requestAnimationFrame(move)
       }
-  })
+    }
+    window.requestAnimationFrame(move)
   }
 
-  parsePosition(position){
-    return parseInt(position)
-  }
 
 }
 
+// parsePosition(position){
+//   return parseInt(position)
+// }
 // function start() {
 //   document.addEventListener('keydown', moveDog)
   //
