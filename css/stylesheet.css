@@ -12,9 +12,11 @@
 #dog {
   height: 80px;
   width: 170px;
+  bottom: 325px;
+  left: 0px;
   position: absolute;
   background-image:url('./img/rocket.png');
-  background-repeat: no-repeat;
+  background-repeat: no-repeat
 }
 
 .asteroid {
