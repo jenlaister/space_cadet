@@ -3,18 +3,27 @@ class Dog {
     this.player = player
     this.height = 75
     this.width = 125
-    const dog = document.getElementById('dog')
+    this.dogEl = document.getElementById('dog')
+
     // this.score = 0 score being kept by game? Will change later.
   }
+
 
   render(){
     let $dog = $('#dog')
     $dog.html()
   }
+  //
+  // var dogPosition = "325px"
+  // var positionBottom = "0px"
+  // var positionTop = "650px"
+  // var positionLeft = "0px"
+  // var positionRight = "1100px"
 
   moveDog() {
-  this.addEventHandlers.bind(this))
-    $('#dog').on('keypress', function(key) => {
+  // this.addEventListener.bind(this))
+    $(document).on("keyup", (key) => {
+
       if (key.which == 38) { // up
         moveDogUp() // move the spaceship up
       } else if(key.which == 40) { // down
@@ -23,27 +32,30 @@ class Dog {
     })
   }
 
+  dogPosition(){
+    return parseInt($(".container #board #dog").css("bottom"))
+  }
+
   moveDogUp() {
   window.requestAnimationFrame(function() {
-    const up = positionToInteger(dog.up)
-    if (up > 0) {
-      dog.up = `${bottom - 4}px`;
+    if (dogPosition < 650) {
+      var newDogPosition = `${dogPosition + 50}px`
     }
   })
 }
 
   moveDogdown() {
   window.requestAnimationFrame(function() {
-    const down = positionToInteger(dog.down)
-    if (top < 675) {     //width: 1100, height: 750
-      dog.down = `${down + 4}px`;
+    if (dogPosition > 0) {
+      var newDogPosition = `${dogPosition - 50}px`
     }
   })
-}
+  }
 
-}
-function positionToInteger(p) {
-  return parseInt(p.split('px')[0])
+  parsePosition(position){
+    return parseInt(position)
+  }
+
 }
 
 // function start() {
