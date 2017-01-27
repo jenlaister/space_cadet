@@ -1,17 +1,17 @@
 class Board{
   constructor(){
-    this.width = 800
-    this.height = 600
-    // this.player1 = dog
-    // this.upArrow = 38
-    // this.downArrow = 40
+    this.width = 1100
+    this.height = 750
+    // up = 38
+    // down = 40
     // right > 39
     // left < 37
   }
 
   render(){
-    let img = './css/img/bg.png'
+    // let img = './css/img/bg.png'
+    // $board.append(`<img src=${img} height="750" width="1100">`)
     let $board = $('#board')
-    $board.append(`<img src=${img} height="600" width="800">`)
+    $board.html()
 }
 }

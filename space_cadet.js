@@ -4,10 +4,9 @@ class SpaceCadet{
     this.player = player
   }
 
-  render(){
-    this.board.render(this.addEventHandlers.bind(this))
-  }
-
+  // render(){
+  //   this.board.render(this.addEventHandlers.bind(this))
+  // }
 
 
 }

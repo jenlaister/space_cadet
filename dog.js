@@ -1,50 +1,52 @@
 class Dog {
   constructor(player) {
     this.player = player
-    this.height = 60
-    this.width = 60
+    this.height = 75
+    this.width = 125
+    const dog = document.getElementById('dog')
     // this.score = 0 score being kept by game? Will change later.
   }
 
   render(){
     let $dog = $('#dog')
-    $dog.html('dog')
-    this.addEventHandlers.bind(this))
+    $dog.html()
   }
-}
 
-  addEventHandlers(){
+  moveDog() {
+  this.addEventHandlers.bind(this))
     $('#dog').on('keypress', function(key) => {
       if (key.which == 38) { // up
-        $(event.target).
-        // move the spaceship up
-      } else {
-        $(event.target).
-        // move the spaceship down
+        moveDogUp() // move the spaceship up
+      } else if(key.which == 40) { // down
+        moveDogDown() // move the spaceship down, $(event.target) ?
       }
     })
   }
+
+  moveDogUp() {
+  window.requestAnimationFrame(function() {
+    const up = positionToInteger(dog.up)
+    if (up > 0) {
+      dog.up = `${bottom - 4}px`;
+    }
+  })
 }
 
-// function move(rock) {
-//   var top = 0
-//
-//   function step() {
-//     rock.style.top = `${top += 2}px`
-//
-//     if (top < 200) {
-//       window.requestAnimationFrame(step)
-//     }
-//   }
-//
-//   window.requestAnimationFrame(step)
-// }
+  moveDogdown() {
+  window.requestAnimationFrame(function() {
+    const down = positionToInteger(dog.down)
+    if (top < 675) {     //width: 1100, height: 750
+      dog.down = `${down + 4}px`;
+    }
+  })
+}
 
+}
+function positionToInteger(p) {
+  return parseInt(p.split('px')[0])
+}
 
-
-
-// function hitSpaceship?(rock) {
-//   const top
-// asteroids 20px
-// spaceship 90px wide, 60px height
-// }
+// function start() {
+//   document.addEventListener('keydown', moveDog)
+  //
+  // START.style.display = 'none'

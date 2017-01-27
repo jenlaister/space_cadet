@@ -3,4 +3,6 @@ $(document).ready(function(){
   space_cadet.render()
   let dog = new Dog()
   dog.render()
+  let asteroid = new Asteroids()
+  asteroid.render()
 })
