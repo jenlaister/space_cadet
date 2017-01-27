@@ -1,7 +1,7 @@
 class Board{
   constructor(){
     this.width = 1100
-    this.height = 750
+    this.height = 650
     // up = 38
     // down = 40
     // right > 39
@@ -13,5 +13,7 @@ class Board{
     // $board.append(`<img src=${img} height="750" width="1100">`)
     let $board = $('#board')
     $board.html()
+    // let $dog = $('#dog')
+    // $dog.html()
 }
 }

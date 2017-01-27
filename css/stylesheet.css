@@ -12,7 +12,6 @@
 #dog {
   height: 80px;
   width: 170px;
-  float: left;
   position: absolute;
   background-image:url('./img/rocket.png');
   background-repeat: no-repeat;
