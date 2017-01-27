@@ -9,11 +9,8 @@ class Board{
   }
 
   render(){
-    // let img = './css/img/bg.png'
-    // $board.append(`<img src=${img} height="750" width="1100">`)
     let $board = $('#board')
     $board.html()
-    // let $dog = $('#dog')
-    // $dog.html()
+
 }
 }

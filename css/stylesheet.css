@@ -22,12 +22,12 @@
 .asteroid {
   width: 40px;
   height: 40px;
-  float: right;
-  position: relative;
+  right: 0px;
+  position: absolute;
   background-image:url('./img/asteroid.png')
 }
 
-.rock:before {
+.asteroid:before {
   height: 0;
   left: 0;
   position: absolute;
