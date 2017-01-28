@@ -1,10 +1,6 @@
 class Dog {
   constructor(player) {
     this.player = player
-    this.height = 75
-    this.width = 125
-    this.dogEl = document.getElementById('dog')
-
     // this.score = 0 score being kept by game? Will change later.
   }
 
@@ -14,7 +10,6 @@ class Dog {
   }
 
   moveDog() {
-  // this.addEventListener.bind(this))
     $(document).on("keyup", (key) => {
       if (key.which == 38) { // up
         this.moveDogUp() // move the spaceship up
@@ -52,7 +47,6 @@ class Dog {
     }
     window.requestAnimationFrame(move)
   }
-
 
 }
 

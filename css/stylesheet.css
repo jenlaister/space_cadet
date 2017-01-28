@@ -19,15 +19,23 @@
   background-repeat: no-repeat
 }
 
-.asteroid {
+#start {
+  color: white;
+  font-size: 4rem;
+  position: relative;
+  text-decoration: none;
+  top: 4rem;
+}
+
+.rock {
   width: 40px;
   height: 40px;
   right: 0px;
   position: absolute;
-  background-image:url('./img/asteroid.png')
+  background-image:url('./img/rock.png')
 }
 
-.asteroid:before {
+/*.asteroid:before {
   height: 0;
   left: 0;
   position: absolute;
@@ -36,10 +44,10 @@
   background-image:url('./img/rocks.png')
 }
 
-.rock:after {
+.asteroid:after {
   bottom: 0;
   height: 0;
   left: 0;
   position: absolute;
   background-image:url('./img/rocks.png')
-}
+}*/
