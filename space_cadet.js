@@ -4,6 +4,7 @@ class SpaceCadet{
     this.player = player
   }
 
+//
 //   checkCollision(rock) {
 //     // rocks are 20px high
 //     // DOG is 80px high
@@ -28,7 +29,7 @@ class SpaceCadet{
 //   }
 //  youWin() {
 //  if Dog.dogPosition reaches the end of the board(1050px)
-// alert ('you win') 
+// alert ('you win')
 //  }
 //
 //   endGame() {

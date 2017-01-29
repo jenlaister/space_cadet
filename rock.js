@@ -20,17 +20,17 @@ class Rock {
   }
 
   randomizedPosition() {
-    var h = $('#board').height() - 50
-    var newH = Math.floor(Math.random() * h)
-    var w = $('#board').width() - 75
-    var newW = Math.floor(Math.random() * w)
+    var h = $('#board').height() - 15 // 650-15 = H: 635
+    var newH = Math.floor(Math.random() * h) // .5 * 635 = 317
+    var w = $('#board').width() - 15 // 1100 - 15 = W: 1085
+    var newW = Math.floor(.10 * w) // .35 * 1085 = 379.75
     return [newH, newW]
   }
 
   randomizedAnotherPosition() {
-    var h = $('#board').height() - 25
-    var newH = Math.floor(Math.random() * h)
-    var w = $('#board').width() - 100
+    var h = $('#board').height() - 10
+    var newH = Math.floor(.15 * h)
+    var w = $('#board').width() - 10 //Math.max()
     var newW = Math.floor(Math.random() * w)
     return [newH, newW]
   }
@@ -40,10 +40,10 @@ class Rock {
     var newPosition1 = this.randomizedAnotherPosition()
     $('.rock').animate({ top: newPosition[0], left: newPosition[1] })
     $('.rock_1').animate({ top: newPosition1[0], right: newPosition1[1] })
-    $('.rock_2').animate({ right: newPosition[0], top: newPosition1[1] })
-    $('.rock_3').animate({ left: newPosition1[0], top: newPosition[1] })
-    $('.rock_4').animate({ top: newPosition[0], right: newPosition1[1] })
-    $('.rock_5').animate({ left: newPosition1[0], top: newPosition[1] })
+    $('.rock_2').animate({ right: newPosition[0], top: newPosition[1] })
+    $('.rock_3').animate({ left: newPosition[0], top: newPosition[1] })
+    $('.rock_4').animate({ top: newPosition[0], right: newPosition[1] })
+    $('.rock_5').animate({ left: newPosition[0], top: newPosition[1] })
     this.animateRock()
   }
 }

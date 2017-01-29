@@ -10,7 +10,7 @@ class Dog {
   }
 
   moveDog() {
-    $(document).on("keyup", (key) => {
+    $(document).on("keydown", (key) => {
       if (key.which == 38) { // up
         this.moveDogUp() // move the spaceship up
       } if (key.which == 40) {

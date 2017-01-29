@@ -2,7 +2,7 @@ $(document).ready(function(){
   let space_cadet = new Board()
   space_cadet.render()
   let music = document.createElement('audio')
-  music.setAttribute('src', 'audio/Galactic Empire - The Imperial March - from YouTube (1).mp3')
+  music.setAttribute('src', 'audio/Earth Wind and Fire- Shining Star - from YouTube.mp3')
   //$('#start').click(function() {
   music.play()
   //}
