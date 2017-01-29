@@ -25,6 +25,7 @@
   position: relative;
   text-decoration: none;
   top: 4rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .rock {
@@ -35,19 +36,42 @@
   background-image:url('./img/rock.png')
 }
 
-/*.asteroid:before {
-  height: 0;
-  left: 0;
+.rock_1 {
+  width: 40px;
+  height: 40px;
+  right: 0px;
   position: absolute;
-  top: 0;
-  width: 9px;
-  background-image:url('./img/rocks.png')
+  background-image:url('./img/rock.png')
 }
 
-.asteroid:after {
-  bottom: 0;
-  height: 0;
-  left: 0;
+.rock_2 {
+  width: 40px;
+  height: 40px;
+  right: 0px;
   position: absolute;
-  background-image:url('./img/rocks.png')
-}*/
+  background-image:url('./img/rock.png')
+}
+
+.rock_3 {
+  width: 40px;
+  height: 40px;
+  right: 0px;
+  position: absolute;
+  background-image:url('./img/rock.png')
+}
+
+.rock_4 {
+  width: 40px;
+  height: 40px;
+  right: 0px;
+  position: absolute;
+  background-image:url('./img/rock.png')
+}
+
+.rock_5 {
+  width: 40px;
+  height: 40px;
+  right: 0px;
+  position: absolute;
+  background-image:url('./img/rock.png')
+}

@@ -6,12 +6,10 @@ class Board{
     // down = 40
     // right > 39
     // left < 37
-    const START = document.getElementById('start')
   }
 
   render(){
     let $board = $('#board')
     $board.html()
-
 }
 }
