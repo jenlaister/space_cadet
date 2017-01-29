@@ -15,7 +15,7 @@ class Dog {
 
   moveDog() {
   // this.addEventListener.bind(this))
-    $(document).on("keyup", (key) => {
+    $(document).on("keydown", (key) => {
       if (key.which == 38) { // up
         this.moveDogUp() // move the spaceship up
       }

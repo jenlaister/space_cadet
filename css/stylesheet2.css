@@ -22,7 +22,9 @@
 .asteroid {
   width: 40px;
   height: 40px;
-  right: 0px;
+  /*right: 0px;*/
+  left: 1050px;
+  bottom: 40px;
   position: absolute;
   background-image:url('./img/asteroid.png')
 }
