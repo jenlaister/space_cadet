@@ -13,9 +13,12 @@ class Dog {
     $(document).on("keyup", (key) => {
       if (key.which == 38) { // up
         this.moveDogUp() // move the spaceship up
-      }
-      if (key.which == 40) {
+      } if (key.which == 40) {
         this.moveDogDown() // move the spaceship down
+      } if (key.which == 39) {
+        this.moveDogRight()
+      } if (key.which == 37) {
+        this.moveDogLeft()
       }
     })
   }
@@ -27,19 +30,19 @@ class Dog {
   moveDogUp() {
     let dogItself = this
     function move() {
-      var newDogPosition = (dogItself.dogPosition() + 25)
+      var newDogPosition = (dogItself.dogPosition() + 50)
       if (newDogPosition < 595) {
         return $('#dog').css('bottom', (newDogPosition.toString().concat('px')))
         window.requestAnimationFrame(move)
       }
+    }
+    window.requestAnimationFrame(move)
   }
-  window.requestAnimationFrame(move)
-}
 
   moveDogDown() {
     let dogItself = this
     function move() {
-      var newDogPosition = (dogItself.dogPosition() - 25)
+      var newDogPosition = (dogItself.dogPosition() - 50)
       if (newDogPosition > 0) {
         return $('#dog').css('bottom', (newDogPosition.toString().concat('px')))
         window.requestAnimationFrame(move)
@@ -48,12 +51,28 @@ class Dog {
     window.requestAnimationFrame(move)
   }
 
-}
+  moveDogRight() {
+    let dogItself = this
+    function move() {
+      var newDogPosition = (dogItself.dogPosition() + 50)
+      if (newDogPosition < 925) {
+        return $('#dog').css('left', (newDogPosition.toString().concat('px')))
+        window.requestAnimationFrame(move)
+      }
+    }
+    window.requestAnimationFrame(move)
+  }
 
-// parsePosition(position){
-//   return parseInt(position)
-// }
-// function start() {
-//   document.addEventListener('keydown', moveDog)
-  //
-  // START.style.display = 'none'
+  moveDogLeft() {
+    let dogItself = this
+    function move() {
+      var newDogPosition = (dogItself.dogPosition() - 50)
+      if (newDogPosition > 0) {
+        return $('#dog').css('left', (newDogPosition.toString().concat('px')))
+        window.requestAnimationFrame(move)
+      }
+    }
+    window.requestAnimationFrame(move)
+  }
+
+}
