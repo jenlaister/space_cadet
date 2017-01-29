@@ -7,6 +7,7 @@ class Dog {
   render(){
     let $dog = $('#dog')
     $dog.html()
+    // alert("hey")
   }
 
   moveDog() {
@@ -20,12 +21,13 @@ class Dog {
       } if (key.which == 37) {
         this.moveDogLeft()
       }
-    })
-  }
+  })
+}
 
   dogPosition(){ //starting point of dog
     return parseInt($(".container #board #dog").css("bottom"))
   }
+
 
   moveDogUp() {
     let dogItself = this
@@ -51,12 +53,16 @@ class Dog {
     window.requestAnimationFrame(move)
   }
 
+  dogPosition2(){
+    return parseInt($(".container #board #dog").css("left"))
+  }
+
   moveDogRight() {
     let dogItself = this
     function move() {
-      var newDogPosition = (dogItself.dogPosition() + 50)
-      if (newDogPosition < 925) {
-        return $('#dog').css('left', (newDogPosition.toString().concat('px')))
+      var newDogPosition2 = (dogItself.dogPosition2() + 50)
+      if (newDogPosition2 < 925) {
+        return $('#dog').css('left', (newDogPosition2.toString().concat('px')))
         window.requestAnimationFrame(move)
       }
     }
@@ -66,13 +72,20 @@ class Dog {
   moveDogLeft() {
     let dogItself = this
     function move() {
-      var newDogPosition = (dogItself.dogPosition() - 50)
-      if (newDogPosition > 0) {
-        return $('#dog').css('left', (newDogPosition.toString().concat('px')))
+      var newDogPosition2 = (dogItself.dogPosition2() - 50)
+      if (newDogPosition2 > 0) {
+        return $('#dog').css('left', (newDogPosition2.toString().concat('px')))
         window.requestAnimationFrame(move)
       }
     }
     window.requestAnimationFrame(move)
   }
+
+  // checkCollision(){
+  //   alert("You Lose")
+  //   //var list = $("#selector").collision(".obstacle");
+  //   // let $collision = $("#dog").collision(".rock")
+  //   //   $collision.alert("You Lose!")
+  //   }
 
 }
