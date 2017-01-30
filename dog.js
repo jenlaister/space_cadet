@@ -13,18 +13,18 @@ class Dog {
   moveDog() {
     $(document).on("keydown", (key) => {
       if (key.which == 38) { // up
-        this.moveDogUp() // move the spaceship up
-      } if (key.which == 40) {
-        this.moveDogDown() // move the spaceship down
-      } if (key.which == 39) {
+        this.moveDogUp()
+      } if (key.which == 40) { // down
+        this.moveDogDown()
+      } if (key.which == 39) { // right
         this.moveDogRight()
-      } if (key.which == 37) {
+      } if (key.which == 37) { // left
         this.moveDogLeft()
       }
   })
 }
 
-  dogPosition(){ //starting point of dog
+  dogPosition(){ //starting point of dog for up & down
     return parseInt($(".container #board #dog").css("bottom"))
   }
 
@@ -53,7 +53,9 @@ class Dog {
     window.requestAnimationFrame(move)
   }
 
-  dogPosition2(){
+
+  dogPosition2() { //starting point of dog for left & right
+
     return parseInt($(".container #board #dog").css("left"))
   }
 
@@ -61,7 +63,8 @@ class Dog {
     let dogItself = this
     function move() {
       var newDogPosition2 = (dogItself.dogPosition2() + 50)
-      if (newDogPosition2 < 925) {
+
+      if (newDogPosition2 < 1000) {
         return $('#dog').css('left', (newDogPosition2.toString().concat('px')))
         window.requestAnimationFrame(move)
       }
@@ -73,7 +76,7 @@ class Dog {
     let dogItself = this
     function move() {
       var newDogPosition2 = (dogItself.dogPosition2() - 50)
-      if (newDogPosition2 > 0) {
+      if (newDogPosition2 > -50) {
         return $('#dog').css('left', (newDogPosition2.toString().concat('px')))
         window.requestAnimationFrame(move)
       }
