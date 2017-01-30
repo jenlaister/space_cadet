@@ -1,14 +1,20 @@
 $(document).ready(function(){
   let board = new Board()
   board.render()
-  //let player = new Player()
+
+  let music = document.createElement('audio')
+  music.setAttribute('src', 'audio/Earth Wind and Fire- Shining Star - from YouTube.mp3')
+  //$('#start').click(function() {
+  music.play()
   //}
   board.startGame()
   let dog = new Dog()
   //board.checkCollision() //setInterval
   dog.render()
   dog.moveDog()
+  board.checkCollision()
   let rock = new Rock()
   rock.render()
   rock.animateRock()
+
 })

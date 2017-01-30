@@ -7,6 +7,7 @@ class Dog {
   render(){
     let $dog = $('#dog')
     $dog.html()
+    // alert("hey")
   }
 
   moveDog() {
@@ -20,12 +21,13 @@ class Dog {
       } if (key.which == 37) { // left
         this.moveDogLeft()
       }
-    })
-  }
+  })
+}
 
   dogPosition(){ //starting point of dog for up & down
     return parseInt($(".container #board #dog").css("bottom"))
   }
+
 
   moveDogUp() {
     let dogItself = this
@@ -51,7 +53,9 @@ class Dog {
     window.requestAnimationFrame(move)
   }
 
+
   dogPosition2() { //starting point of dog for left & right
+
     return parseInt($(".container #board #dog").css("left"))
   }
 
@@ -59,6 +63,7 @@ class Dog {
     let dogItself = this
     function move() {
       var newDogPosition2 = (dogItself.dogPosition2() + 50)
+
       if (newDogPosition2 < 1000) {
         return $('#dog').css('left', (newDogPosition2.toString().concat('px')))
         window.requestAnimationFrame(move)
@@ -78,4 +83,12 @@ class Dog {
     }
     window.requestAnimationFrame(move)
   }
+
+  // checkCollision(){
+  //   alert("You Lose")
+  //   //var list = $("#selector").collision(".obstacle");
+  //   // let $collision = $("#dog").collision(".rock")
+  //   //   $collision.alert("You Lose!")
+  //   }
+
 }
