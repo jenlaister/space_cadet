@@ -19,6 +19,16 @@
   background-repeat: no-repeat
 }
 
+/*#cat {
+  height: 80px;
+  width: 170px;
+  bottom: 325px;
+  left: 0px;
+  position: absolute;
+  background-image:url('./img/kittynaut.png');
+  background-repeat: no-repeat
+}*/
+
 #start {
   color: white;
   font-size: 4rem;
