@@ -84,11 +84,5 @@ class Dog {
     window.requestAnimationFrame(move)
   }
 
-  // checkCollision(){
-  //   alert("You Lose")
-  //   //var list = $("#selector").collision(".obstacle");
-  //   // let $collision = $("#dog").collision(".rock")
-  //   //   $collision.alert("You Lose!")
-  //   }
 
 }

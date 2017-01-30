@@ -13,71 +13,42 @@ class Board{
   startGame(){
     let music = document.createElement('audio')
     music.setAttribute('src', 'audio/Earth Wind and Fire- Shining Star - from YouTube.mp3')
-    document.addEventListener("click", start)
-    function start() {
+    document.addEventListener("click",
+    function() {
       music.play()
       $("#start").remove()
-      //rock.animateRock()
-    }
+      let rock = new Rock()
+      rock.render()
+      rock.moveRock()
+    })
   }
-  // checkCollision(){
-  //   if ((($('.rock')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock')[0].style["left"] == $('#dog')[0].style["left"])) ||
-  //     (($('.rock_1')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_1')[0].style["left"] == $('#dog')[0].style["left"])) ||
-  //     (($('.rock_2')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_2')[0].style["left"] == $('#dog')[0].style["left"])) ||
-  //     (($('.rock_3')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_3')[0].style["left"] == $('#dog')[0].style["left"])) ||
-  //     (($('.rock_4')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_4')[0].style["left"] == $('#dog')[0].style["left"])) ||
-  //     (($('.rock_5')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_5')[0].style["left"] == $('#dog')[0].style["left"]))) {
-  //     alert("you lose")
-  //   }
-  // }
 
-  //   $('.rock')[0].style["top"]
-  // "127.239px"
-  // $('.rock')[0].style["left"]
-  // "108px"
-  // $('#dog')[0].style["left"]
-  // "0px"
-  // $('#dog')[0].style["bottom"]
-  // "225px"
-
-
-//   checkCollision(){
-//   let $collision = $('#dog').collision(“.rock”)
-//     $collision.alert('You lose!')
-//     let loserMusic = document.createElement('audio')
-//     loserMusic.setAttribute('src', 'audio/Lost-life-sound-effect.mp3')
-//     loserMusic.play()
-// }
-// testCollision(position1, size1, position2, size2) {
-//  if (((position1.left + size1.width)  > position2.left) &&
-//  ((position1.top  + size1.height) > position2.top)  &&
-//  ((position2.left + size2.width)  > position1.left) &&
-//  ((position2.top  + size2.height) > position1.top)) {
-//    triggerExplosion(position1.top, position1.left);
-//  }
-// }
 
   checkCollision(){
-    if ((($('.rock')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock')[0].style["left"] == $('#dog')[0].style["left"])) ||
-      (($('.rock_1')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_1')[0].style["left"] == $('#dog')[0].style["left"])) ||
-      (($('.rock_2')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_2')[0].style["left"] == $('#dog')[0].style["left"])) ||
-      (($('.rock_3')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_3')[0].style["left"] == $('#dog')[0].style["left"])) ||
-      (($('.rock_4')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_4')[0].style["left"] == $('#dog')[0].style["left"])) ||
-      (($('.rock_5')[0].style["bottom"] == $('#dog')[0].style["bottom"]) && ($('.rock_5')[0].style["left"] == $('#dog')[0].style["left"]))) {
-      alert("you lose")
+  var collide = $('#dog').collision('.rock')
+  var collide1 = $('#dog').collision('.rock_1')
+  var collide2 = $('#dog').collision('.rock_2')
+  var collide3 = $('#dog').collision('.rock_3')
+  var collide4 = $('#dog').collision('.rock_4')
+  var collide5 = $('#dog').collision('.rock_5')
+    if (!!collide.length || !!collide1.length || !!collide2.length || !!collide3.length || !!collide4.length || !!collide5.length) { // true
+      alert('You lose!')
+      let loserMusic = document.createElement('audio')
+      loserMusic.setAttribute('src', 'audio/Lost-life-sound-effect.mp3')
+      loserMusic.play()
     }
   }
 
-//   $('.rock')[0].style["top"]
-// "127.239px"
-// $('.rock')[0].style["left"]
-// "108px"
-//
-// $('#dog')[0].style["left"]
-// "0px"
-//
-// $('#dog')[0].style["bottom"]
-// "225px"
+  collided(){
+    let boardItself = this
+    setInterval(function(){
+      boardItself.checkCollision()}, 100)
+  }
 
+  winGame() {
+    if (($('#dog')[0].style['left']) == '950px') { // true
+      alert("YAY! YOU WIN!!!")
+    }
+  }
 
 }
